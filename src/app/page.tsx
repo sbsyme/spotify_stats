@@ -3,10 +3,10 @@ import Image from "next/image";
 import { cookies } from "next/headers";
 
 async function getSpotifyUser() {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const accessToken = cookieStore.get("spotify_access_token")?.value;
   if (!accessToken) return null;
-  const res = await fetch("http://127.0.0.1:3000/api/spotify/me", {
+  const res = await fetch("/api/spotify/me", {
     headers: { Cookie: `spotify_access_token=${accessToken}` },
     cache: "no-store",
   });
