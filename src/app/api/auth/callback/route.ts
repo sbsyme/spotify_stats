@@ -33,7 +33,8 @@ export async function GET(req: NextRequest) {
     }
 
     // Set tokens in secure, HTTP-only cookies
-    const responseRedirect = NextResponse.redirect('/');
+    const baseUrl = req.nextUrl.origin;
+    const responseRedirect = NextResponse.redirect(baseUrl + '/');
     responseRedirect.cookies.set('spotify_access_token', data.access_token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
