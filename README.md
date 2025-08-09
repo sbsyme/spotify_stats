@@ -1,8 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# Spotify Stats Web App
+
+This project is a [Next.js](https://nextjs.org) web application bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), using TypeScript and Tailwind CSS. It allows users to authenticate with Spotify and view statistics about their listening activity.
+
+## Features
+
+- Spotify OAuth authentication
+- View personalized Spotify listening statistics
+- Modern, responsive UI with Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+## Getting Started
+
+
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -16,7 +34,23 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+## Spotify API Setup
+
+1. Register your app at the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications).
+2. Add your Client ID and Client Secret to a `.env.local` file:
+
+```env
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+SPOTIFY_REDIRECT_URI=http://localhost:3000/api/auth/callback
+```
+
+3. Implement authentication and API calls in the Next.js API routes (see `/src/app/api`).
+
+## Learn More
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
