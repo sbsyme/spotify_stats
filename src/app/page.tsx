@@ -6,7 +6,10 @@ async function getSpotifyUser() {
   const cookieStore = await cookies();
   const accessToken = cookieStore.get("spotify_access_token")?.value;
   if (!accessToken) return null;
-  const res = await fetch("/api/spotify/me", {
+  const baseUrl = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
+  const res = await fetch(`${baseUrl}/api/spotify/me`, {
     headers: { Cookie: `spotify_access_token=${accessToken}` },
     cache: "no-store",
   });
