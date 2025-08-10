@@ -58,7 +58,7 @@ export default function NavBar() {
                     </>
                 )}
             </div>
-            <div className="hidden sm:flex items-center min-w-[120px] justify-end">
+            <div className="flex items-center min-w-[120px] justify-end w-full sm:w-auto">
                 {/* Show user nav if logged in, else show login button */}
                 {user ? <UserNav /> : <LoginButton />}
             </div>
