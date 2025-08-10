@@ -19,7 +19,9 @@ export const metadata: Metadata = {
   description: "View your Spotify listening statistics, top tracks, and artists.",
 };
 
+
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 export default function RootLayout({
   children,
@@ -28,16 +30,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-br from-green-100 via-white to-green-200 dark:from-gray-950 dark:via-gray-900 dark:to-green-950`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-br from-indigo-950 via-slate-900 to-purple-950 dark:from-slate-950 dark:via-indigo-950 dark:to-purple-900`}>
         <NavBar />
         {children}
-        <footer className="w-full py-6 text-center text-sm text-gray-500 dark:text-gray-400 border-t border-green-200 dark:border-green-900 bg-white/70 dark:bg-black/30 mt-12">
-          <span>
-            Built by <a href="https://scottsyme.com" target="_blank" rel="noopener noreferrer" className="text-green-700 dark:text-green-400 hover:underline font-semibold">Scott Syme</a>
-            {" | "}
-            <a href="https://github.com/scottsyme" target="_blank" rel="noopener noreferrer" className="text-green-700 dark:text-green-400 hover:underline font-semibold">GitHub</a>
-          </span>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
